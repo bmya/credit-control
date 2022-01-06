@@ -24,5 +24,5 @@
             "account_financial_risk/static/src/scss/account_financial_risk_table.scss",
         ],
     },
-    "installable": True,
+    "installable": False,
 }
