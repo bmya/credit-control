@@ -12,7 +12,7 @@
                 <page
                     name="financial_risk"
                     string="Financial Risk"
-                    attrs="{'invisible': [('is_company','=',False), ('parent_id','!=',False)]}"
+                    invisible="not is_company and parent_id != False"
                     groups="account.group_account_manager"
                 >
                     <group name="risk_general">
@@ -25,7 +25,7 @@
                             >
                                 <field
                                     name="risk_invoice_draft_include"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                 />
                                 <button
                                     name="open_risk_pivot_info"
@@ -42,7 +42,7 @@
                                 </button>
                                 <field
                                     name="risk_invoice_open_include"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                 />
                                 <button
                                     name="open_risk_pivot_info"
@@ -59,7 +59,7 @@
                                 </button>
                                 <field
                                     name="risk_invoice_unpaid_include"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                 />
                                 <button
                                     name="open_risk_pivot_info"
@@ -76,7 +76,7 @@
                                 </button>
                                 <field
                                     name="risk_account_amount_include"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                 />
                                 <button
                                     name="open_risk_pivot_info"
@@ -93,7 +93,7 @@
                                 </button>
                                 <field
                                     name="risk_account_amount_unpaid_include"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                 />
                                 <button
                                     name="open_risk_pivot_info"
@@ -150,31 +150,31 @@
                             >
                                 <field
                                     name="risk_invoice_draft_limit"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                     widget='monetary'
                                     options="{'currency_field': 'risk_currency_id'}"
                                 />
                                 <field
                                     name="risk_invoice_open_limit"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                     widget='monetary'
                                     options="{'currency_field': 'risk_currency_id'}"
                                 />
                                 <field
                                     name="risk_invoice_unpaid_limit"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                     widget='monetary'
                                     options="{'currency_field': 'risk_currency_id'}"
                                 />
                                 <field
                                     name="risk_account_amount_limit"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                     widget='monetary'
                                     options="{'currency_field': 'risk_currency_id'}"
                                 />
                                 <field
                                     name="risk_account_amount_unpaid_limit"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                     widget='monetary'
                                     options="{'currency_field': 'risk_currency_id'}"
                                 />
@@ -189,7 +189,7 @@
                                 <field
                                     class="oe_inline"
                                     name="credit_currency"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                     nolabel="1"
                                 />
                                 <span class="oe_inline">
@@ -207,7 +207,7 @@
                                     name="credit_limit"
                                     widget="monetary"
                                     options="{'currency_field': 'risk_currency_id'}"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                    readonly="not risk_allow_edit"
                                 />
                                 <div
                                     attrs="{'invisible': [('date_credit_limit', '=', False)]}"
@@ -231,7 +231,7 @@
                         <group>
                             <field
                                 name="credit_policy"
-                                attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                                readonly="not risk_allow_edit"
                             />
                         </group>
                     </group>
