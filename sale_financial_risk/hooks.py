@@ -8,12 +8,12 @@ from odoo.tools import sql
 logger = logging.getLogger(__name__)
 
 
-def pre_init_hook(cr):
+def pre_init_hook(env):
     """
     The objective of this hook is to speed up the installation
     of the module on an existing Odoo instance.
     """
-    create_risk_partner_id_column(cr)
+    create_risk_partner_id_column(env.cr)
 
 
 def create_risk_partner_id_column(cr):

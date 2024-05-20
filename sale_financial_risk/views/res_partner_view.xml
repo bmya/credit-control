@@ -10,7 +10,7 @@
             <field name="risk_invoice_draft_include" position="before">
                 <field
                     name="risk_sale_order_include"
-                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                    readonly="not risk_allow_edit"
                 />
                 <button
                     name="open_risk_pivot_info"
@@ -29,7 +29,7 @@
             <field name="risk_invoice_draft_limit" position="before">
                 <field
                     name="risk_sale_order_limit"
-                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
+                    readonly="not risk_allow_edit"
                     widget='monetary'
                     options="{'currency_field': 'risk_currency_id'}"
                 />
