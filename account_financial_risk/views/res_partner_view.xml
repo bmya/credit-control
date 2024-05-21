@@ -209,9 +209,7 @@
                                     options="{'currency_field': 'risk_currency_id'}"
                                     readonly="not risk_allow_edit"
                                 />
-                                <div
-                                    attrs="{'invisible': [('date_credit_limit', '=', False)]}"
-                                >
+                                <div invisible="not date_credit_limit">
                                     <span class="oe_read_only">(</span>
                                     <field
                                         name="date_credit_limit"
@@ -224,7 +222,8 @@
                             <field
                                 name="manual_credit_currency_id"
                                 options="{'no_create': True}"
-                                attrs="{'readonly': [('risk_allow_edit', '=', False)], 'invisible': [('credit_currency', '!=', 'manual')]}"
+                                readonly="not risk_allow_edit"
+                                invisible="credit_currency != 'manual'"
                             />
                             <field name="risk_exception" />
                         </group>
