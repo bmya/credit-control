@@ -350,11 +350,12 @@ class ResPartner(models.Model):
             return  # pragma: no cover
         groups = self._risk_account_groups()
         for _key, group in groups.items():
+            #  domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
             group["read_group"] = self.env["account.move.line"].read_group(
                 group["domain"] + [("partner_id", "in", customers.ids)],
                 group["fields"],
                 group["group_by"],
-                orderby="id",
+                # orderby="id",
                 lazy=False,
             )
         for partner in customers:
